@@ -1,0 +1,42 @@
+.main-jobs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    padding: 0 10px;
+}
+
+
+.w-30 {
+    width: 25%;
+}
+
+.w-35 {
+    width: 50%;
+}
+
+.h-100 {
+    height: 100px;
+}
+
+@media screen and (max-width : 900px) {
+    .w-30 {
+        display: none !important;
+    }
+
+    .w-35 {
+        width: 100%;
+    }
+}
+
+.todo-main-cont::-webkit-scrollbar {
+    width: 3px;
+    background-color: rgba(175, 175, 175, 0.5019607843);
+    border-radius: 5px;
+  }
+
+  .saved-jobs-cont::-webkit-scrollbar {
+    width: 3px;
+    background-color: rgba(175, 175, 175, 0.5019607843);
+    border-radius: 5px;
+  }
