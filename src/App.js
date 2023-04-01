@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 import { AuthInit } from "./core/Auth";
 import { LayoutSplashScreen } from "./core/SplashScreen";
 import CookieConsent from "react-cookie-consent";
+import SocketProvider from "./core/socketIoContext/socketProvider";
 
 const App = () => {
   return (
@@ -30,7 +31,9 @@ const App = () => {
         This website uses cookies to enhance the user experience.
       </CookieConsent>
       <AuthInit>
-        <Outlet />
+        <SocketProvider>
+          <Outlet />
+        </SocketProvider>
       </AuthInit>
     </Suspense>
   );

@@ -27,6 +27,8 @@ const PrivateRoutes = () => {
         <Route path="jobs" element={<Jobs user={user} />} />
         <Route path="post-jobs" element={<Jobs />} />
         <Route path="add-candidate" element={<Jobs />} />
+        <Route path="add-company" element={<Jobs />} />
+
 
         <Route
           path="/view-candidate/:id"

@@ -13,9 +13,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 setupAxios(axios);
 root.render(
   <React.StrictMode>
-      <AuthProvider>
+    <AuthProvider>
         <AppRoutes />
-      </AuthProvider>
+    </AuthProvider>
   </React.StrictMode>
 );
 

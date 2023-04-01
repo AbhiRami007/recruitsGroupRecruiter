@@ -28,7 +28,7 @@ function CandidateList() {
   useEffect(() => {
     const getUser = async () => {
       const res = await getAllCandidates();
-      setUser(res.data.data.rows);
+      setUser(res.data.data);
     };
     getUser();
   }, []);

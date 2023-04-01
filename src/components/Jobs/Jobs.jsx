@@ -22,6 +22,7 @@ import { useAuth } from "../../core/Auth";
 import { useDispatch, useSelector } from "react-redux";
 import PostJobs from "../PostJobs/PostJobs";
 import CreateCandidate from "../Candidate/CreateCandidate";
+import CreateClient from "../Client/CreateClientCompany";
 
 function Jobs() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -316,6 +317,7 @@ function Jobs() {
             {window.location.pathname == "/add-candidate" && (
               <CreateCandidate />
             )}
+            {window.location.pathname == "/add-company" && <CreateClient />}
           </div>
 
           <div

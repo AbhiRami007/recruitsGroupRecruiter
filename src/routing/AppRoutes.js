@@ -25,7 +25,7 @@ const AppRoutes = () => {
         <Route
           element={
             <GoogleOAuthProvider clientId="395250203486-oiovkpbqhhf6muc7l8boimv3bf292bs6.apps.googleusercontent.com">
-              <App />
+                <App />
             </GoogleOAuthProvider>
           }
         >

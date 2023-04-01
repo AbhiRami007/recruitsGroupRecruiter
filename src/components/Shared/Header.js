@@ -109,6 +109,16 @@ function Header({ userData }) {
         >
           Add Candidate
         </Link>
+<Link
+          to="/add-company"
+          className={
+            location.pathname === "/add-company"
+              ? "nav-links-active"
+              : "nav-links"
+          }
+        >
+          Add Company
+        </Link>
       </div>
       <div className="header-profile-cont">
         <div className="header-profile-div">

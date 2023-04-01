@@ -8,28 +8,18 @@ import Select from "react-select";
 import "react-bootstrap-tagsinput/dist/index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
-  create,
   createJob,
-  updateUser,
-  updateUserDocument,
-  updateUserImage,
 } from "../../requests/Auth";
 import {
 
   Spinner,
 } from "reactstrap";
 
-import { InputTags } from "react-bootstrap-tagsinput";
 import { toast, ToastContainer } from "react-toastify";
 function PostJobs({ isJobUpdated }) {
   const [image, setImage] = useState();
   const [logo, setLogo] = useState();
-  const [state, setState] = useState([]);
   const [file, setFiles] = useState([]);
-  const [description, setDescription] = useState([]);
-  const [responsibility, setResponsibility] = useState([]);
-  const [qualifications, setQualifications] = useState([]);
-  const [preference, setPreference] = useState([]);
   const options = [
     { value: "Full Time", label: "Full Time" },
     { value: "Part Time", label: "Part Time" },
@@ -84,6 +74,7 @@ function PostJobs({ isJobUpdated }) {
         preference: data.preference.value.split("," ? "," : ""),
         working_at: data.working_at.value.split("," ? "," : ""),
         about_company: data.about_company.value.split("," ? "," : ""),
+        job_keywords: data.keywords.value.split("," ? "," : ""),
       };
       const formdata = new FormData();
       formdata.append("files", file[0]);
@@ -104,6 +95,7 @@ function PostJobs({ isJobUpdated }) {
       formdata.append("preference", body.preference);
       formdata.append("working_at", body.working_at);
       formdata.append("about_company", body.about_company);
+      formdata.append("job_keywords", body.job_keywords);
       const job = await createJob(formdata, "jobs");
       job && loadData();
       toast.success("Job Post Created");
@@ -428,6 +420,20 @@ function PostJobs({ isJobUpdated }) {
                 name="about_company"
                 aria-describedby="about_company"
                 placeholder="Give details about the company"
+              />
+            </div>
+            <div className="form-group">
+              <label for="keywords">Job Keywords</label>
+              <textarea
+                rows="10"
+                cols="50"
+                type="keywords"
+                className="form-control"
+                id="keywords"
+                name="keywords"
+                aria-describedby="keywords"
+                required
+                placeholder="Specify industry as comma separated list"
               />
             </div>
 
