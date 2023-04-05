@@ -21,6 +21,7 @@ export const GET_USER_DOCS = `${USER_API_URL}/document`;
 export const UPDATE_USER_IMAGE = `${USER_API_URL}/profile`;
 export const CREATE_URL = `${USER_API_URL}/create`
 export const CREATE_JOB_POST = `${USER_API_URL}/jobs`
+export const CREATE_CLIENT = `${USER_API_URL}/company`
 export const GET_USER_BY_ID = `${USER_API_URL}/id`;
 export const GET_ALL_JOBS = `${USER_API_URL}/jobs`;
 
@@ -54,6 +55,11 @@ joined_on: new Date(),
 export function createJob(data, type) {
  
   return axios.post(CREATE_JOB_POST + "?type="+type, data);
+}
+
+export function createCompany(data, type) {
+ 
+  return axios.post(CREATE_CLIENT + "?type="+type, data);
 }
 
 export function login(email, password) {

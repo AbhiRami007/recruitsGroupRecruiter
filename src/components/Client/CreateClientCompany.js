@@ -8,6 +8,7 @@ import Select from "react-select";
 import "react-bootstrap-tagsinput/dist/index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
+  createCompany,
   createJob,
 } from "../../requests/Auth";
 import {
@@ -71,8 +72,8 @@ function CreateClient() {
       formdata.append("employee_count", body.employee_count);
       formdata.append("company_type", body.company_type);
       formdata.append("sector", body.sector);
-      const job = await createJob(formdata, "jobs");
-      job && loadData();
+      const company = await createCompany(formdata);
+      company && loadData();
       toast.success("Company Created");
 
       setImage("");
